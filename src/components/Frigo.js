@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Casserole from './casserole';
 import './Frigo.css';
 
 class Frigo extends Component {
@@ -24,6 +25,8 @@ class Frigo extends Component {
     return (
       <div className="frigostyle">
         {eggs.map((egg, index) => <img key={index} src={egg.image} alt="" />)}
+        {eggs.map((egg, index) => <div>{index}</div>)}
+        <Casserole id={eggs.index}/>
       </div>
     );
   }
