@@ -24,9 +24,10 @@ class Frigo extends Component {
     const { eggs } = this.state;
     return (
       <div className="frigostyle">
-        {eggs.map((egg, index) => <img key={index} src={egg.image} alt="" />)}
-        {eggs.map((egg, index) => <div>{index}</div>)}
-        <Casserole id={eggs.index}/>
+        {eggs.filter((item) => item.$loki === 1 || item.$loki === 4 || item.$loki === 16 || item.$loki === 23 || item.$loki === 32 || item.$loki === 38 || 
+          item.$loki === 53 || item.$loki === 54 || item.$loki === 58 || item.$loki === 66 ||
+           item.$loki === 76 || item.$loki === 79 || item.$loki === 80).map((egg, index) => <img key={index} src={egg.image} alt="" />)}
+        <Casserole />
       </div>
     );
   }

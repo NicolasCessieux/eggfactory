@@ -6,7 +6,7 @@ class Casserole extends Component {
   render() {
     return(
       <div>
-        {this.props.id}
+        <h1>{this.props.index}</h1>
       </div>
     );
   }
