@@ -23,7 +23,7 @@ class Frigo extends Component {
     const { eggs } = this.state;
     return (
       <div className="frigostyle">
-        {eggs.map((egg, index) => <img key={index} src={egg.image} />)}
+        {eggs.map((egg, index) => <img key={index} src={egg.image} alt="" />)}
       </div>
     );
   }
