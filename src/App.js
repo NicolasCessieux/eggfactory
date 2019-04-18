@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import Kitchen from './components/Kitchen';
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,6 +22,12 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Kitchen} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
