@@ -18,15 +18,12 @@ const tabEggs = [23, 66, 80, 38, 76, 54, 58, 64, 16, 4, 71, 1, 32, 53, 79];
 
 const Recettes = ({ recette }) => {
   if (tabEggs.includes(23) || tabEggs.includes(66) || tabEggs.includes(80)) {
-    console.log("1");
     return <img src={EggJaune} alt="" />;
   }
   if (tabEggs.includes(38) || tabEggs.includes(76)) {
-    console.log("2");
     return <img src={EggPoule} alt="" />;
   }
   if (tabEggs.includes(54) || tabEggs.includes(58) || tabEggs.includes(64)) {
-    console.log("3");
     return <img src={EggVert} alt="" />;
   }
   if (tabEggs.includes(16)) {
