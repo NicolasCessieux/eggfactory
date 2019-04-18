@@ -2,19 +2,22 @@ import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Kitchen from './components/Kitchen';
 import Result from './components/Result';
+import Frigo from './components/Frigo';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <Kitchen />
+          <Frigo />
           <Switch>
             <Route path="/kitchen" component={Kitchen} />
             <Route path="/result" component={Result} />
           </Switch>
-        </BrowserRouter>
+        </BrowserRouter> */}
+        <Frigo />
       </div>
     );
   }
