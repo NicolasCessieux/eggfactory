@@ -1,0 +1,11 @@
+.frigostyle {
+  display: flex;
+  flex-wrap: wrap;
+  width: 10%;
+  height: 920px;
+  padding: 5px;
+  background-color: black;
+  overflow: auto;
+  float: right;
+  border: inset white 5px;
+}
