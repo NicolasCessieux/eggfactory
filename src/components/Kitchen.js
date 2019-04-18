@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
 import View from "./View";
 import Egg from "./Egg";
+import Frigo from "./Frigo";
 import PlanDeTravail from '../images/PlanDeTravail.png';
-import Placard from '../images/Placard.png';
 
 class Kitchen extends Component {
   constructor(props) {
@@ -28,9 +28,9 @@ class Kitchen extends Component {
                 <View touch={this.state.recetteUser} />
                 <Egg getNewState={this.addEgeID} />
             </div>
-            <div className="Placard">
-                <img src={Placard} className="ResponsiveImg" alt="" />
-            </div>
+            
+              <Frigo />
+
         </div>
     );
   }

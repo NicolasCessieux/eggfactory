@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Frigo.css';
+import '../App.css';
 
 class Frigo extends Component {
   constructor(props) {
@@ -22,8 +23,14 @@ class Frigo extends Component {
   render() {
     const { eggs } = this.state;
     return (
-      <div className="frigostyle">
-        {eggs.map((egg, index) => <img key={index} src={egg.image} alt="" />)}
+      <div className="Placard">
+        {eggs.map(
+          (egg, index) =>
+          <div className="EtagerePlacard">
+            <img className="Oeuf" key={index} src={egg.image} alt="" />
+          </div>
+          )
+        }
       </div>
     );
   }
