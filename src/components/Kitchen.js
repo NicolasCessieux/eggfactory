@@ -3,6 +3,7 @@ import PlanDeTravail from '../images/PlanDeTravail.png';
 import o1 from '../images/oeufs/1.png';
 import Recettes from "./Recettes";
 import Modal from "react-awesome-modal";
+import RandomEgg from "./RandomEgg"
 
 class Kitchen extends Component {
   constructor(props) {
@@ -41,7 +42,8 @@ class Kitchen extends Component {
 
   closeModal() {
     this.setState({
-      visible: false
+      visible: false,
+      eggFlat:""
     });
   }
 
@@ -49,7 +51,7 @@ class Kitchen extends Component {
     const { eggs } = this.state;
 
     const handleClick = ($loki) => {
-      this.state.tabTest.push($loki)
+      this.state.tabTest = [($loki)]
       this.setState({ eggFlat: o1 })
     }
     console.log(this.state.tabTest);
@@ -105,7 +107,7 @@ class Kitchen extends Component {
               onClickAway={() => this.closeModal()}
             >
               <div className="modal">
-                <p><Recettes /></p>
+               <RandomEgg />
                 <button className="closeBtn" onClick={() => this.closeModal()}>
                   Close
               </button>

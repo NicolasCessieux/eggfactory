@@ -57,6 +57,11 @@
   height: 33vw;
 }
 
+.Oeuf:active {
+  width: 33vw;
+  height: 33vw;
+}
+
 .Button {
   font-family: 'Mali', cursive;
   font-weight: 700;
