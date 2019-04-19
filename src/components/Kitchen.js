@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import PlanDeTravail from '../images/PlanDeTravail.png';
 import o1 from '../images/oeufs/1.png';
+import o2 from '../images/oeufs/2.png';
+import o3 from '../images/oeufs/3.png';
+import o4 from '../images/oeufs/4.png';
+import o5 from '../images/oeufs/5.png';
+import o6 from '../images/oeufs/6.png';
+import o7 from '../images/oeufs/7.png';
 import Recettes from "./Recettes";
 import Modal from "react-awesome-modal";
 
@@ -12,6 +18,8 @@ class Kitchen extends Component {
       eggs: [],
       tabTest: [],
       eggFlat: '',
+      counter: '',
+      tab: [],
       visible: false
     };
   }
@@ -45,29 +53,41 @@ class Kitchen extends Component {
     });
   }
 
+  oeufAuPlat() {
+    for (let i = 0; i < this.state.counter; i++) {
+      return (<img src={this.randomOeufAuPlat()} className="ResponsiveImg" alt="" />)
+    };
+  }
+
+  randomOeufAuPlat() {
+    const imgs = [o1, o2, o3, o4, o5, o6, o7];
+    return (imgs[Math.floor(Math.random() * imgs.length)])
+  }
+
   render() {
     const { eggs } = this.state;
 
     const handleClick = ($loki) => {
       this.state.tabTest.push($loki)
-      this.setState({ eggFlat: o1 })
+      this.setState({
+        counter: this.state.counter + 1,
+        newtab: this.state.tab.push(<img src={this.randomOeufAuPlat()} className="ResponsiveImgEggFlat" alt="" />)
+      })
     }
-    console.log(this.state.tabTest);
 
     return (
-
-
       <div className="App">
         <div className="PlanDeTravail">
-          <img src={this.state.eggFlat} className="ResponsiveImgEggFlat" alt="" />
-          <img src={PlanDeTravail} className="ResponsiveImg" alt="" />
+          <div className="ResponsiveImg">
+            <img src={PlanDeTravail} className="ResponsiveImgEggFlat" alt="" />
+            {this.state.tab.map(i=>i)}
+          </div>
           <button
             type="button"
             className="Button"
             onClick={() => this.openModal()}
           >
-            {" "}
-            Cook !{" "}
+            {" "}Cook !{" "}
           </button>
         </div>
 
@@ -92,7 +112,6 @@ class Kitchen extends Component {
             )
           }
         </div>
-
 
         <section>
           <div className="modadal">
