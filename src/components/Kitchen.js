@@ -42,6 +42,11 @@ class Kitchen extends Component {
     });
   }
 
+  componentDidUpdate() {
+    document.getElementsByClassName("modal")[0].parentElement.style.backgroundColor = "transparent";
+    document.getElementsByClassName("modal")[0].parentElement.style.boxShadow = "none";
+  }
+
   render() {
     const { eggs } = this.state;
     return (
@@ -84,22 +89,25 @@ class Kitchen extends Component {
         </div>
         <section>
           <div className="modadal">
-          <Modal
-            visible={this.state.visible}
-            width="600"
-            height="500"
-            effect="fadeInLeft"
-            style={{backgroundColor: "transparent"}}
-            onClickAway={() => this.closeModal()}
-          >
-            <div className="modal">
-              <p><Recettes /></p>
-              <button className="closeBtn" onClick={() => this.closeModal()}>
-                Close
-              </button>
-            </div>
-          </Modal>
-          </div> 
+            <Modal
+              className="toto"
+              visible={this.state.visible}
+              width="600"
+              height="500"
+              effect="fadeInLeft"
+              style={{ backgroundColor: "transparent !important" }}
+              onClickAway={() => this.closeModal()}
+            >
+              <div className="modal">
+                <p>
+                  <Recettes />
+                </p>
+                <button className="closeBtn" onClick={() => this.closeModal()}>
+                  Close
+                </button>
+              </div>
+            </Modal>
+          </div>
         </section>
       </div>
     );
