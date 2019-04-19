@@ -18,6 +18,22 @@
   max-height: 66vh;
 }
 
+.ResponsiveImgEggFlat {
+  max-width: 100%;
+  max-height: 66vh;
+  position: absolute;
+}
+
+.ResponsiveImgEggFlat2 {
+  max-width: 100%;
+  max-height: 66vh;
+  position: relative;
+  left: 230px;
+  bottom: 220px;
+  width: 120px;
+  transform: rotateZ(45deg);
+}
+
 .Placard {
   width: 33vw;
   height: 95vh;
@@ -37,6 +53,11 @@
 }
 
 .Oeuf {
+  width: 33vw;
+  height: 33vw;
+}
+
+.Oeuf:active {
   width: 33vw;
   height: 33vw;
 }
