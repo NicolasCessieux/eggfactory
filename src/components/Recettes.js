@@ -18,33 +18,69 @@ const tabEggs = [23, 66, 80, 38, 76, 54, 58, 64, 16, 4, 71, 1, 32, 53, 79];
 
 const Recettes = ({ recette }) => {
   if (tabEggs.includes(23) || tabEggs.includes(66) || tabEggs.includes(80)) {
-    return <img src={EggJaune} alt="" />;
+    return (
+      <div className="egg">
+        <img className="eggResultCustom eggimg" src={EggJaune} alt="" />
+      </div>
+    );
   }
   if (tabEggs.includes(38) || tabEggs.includes(76)) {
-    return <img src={EggPoule} alt="" />;
+    return (
+      <div className="egg">
+        <img className="eggResult eggimg" src={EggPoule} alt="" />;
+      </div>
+    );
   }
   if (tabEggs.includes(54) || tabEggs.includes(58) || tabEggs.includes(64)) {
-    return <img src={EggVert} alt="" />;
+    return (
+      <div className="egg">
+        <img className="eggResultCustom eggimg" src={EggVert} alt="" />;
+      </div>
+    );
   }
   if (tabEggs.includes(16)) {
-    return <img src={EggBleu} alt="" />;
+    return (
+      <div className="egg">
+        <img className="eggResultCustom eggimg" src={EggBleu} alt="" />;
+      </div>
+    );
   }
   if (tabEggs.includes(4) || tabEggs.includes(71)) {
-    return <img src={EggSocle} alt="" />;
+    return (
+      <div className="egg">
+        <img className="eggResult eggimg" src={EggSocle} alt="" />;
+      </div>
+    );
   }
   if (tabEggs.includes(1)) {
-    return <img src={EggOrange} alt="" />;
+    return (
+      <div className="egg">
+        <img className="eggResultCustom eggimg" src={EggOrange} alt="" />;
+      </div>
+    );
   }
   if (tabEggs.includes(32)) {
-    return <img src={EggPoule} alt="" />;
+    return (
+      <div className="egg">
+        <img className="eggResult eggimg" src={EggPoule} alt="" />;
+      </div>
+    );
   }
   if (tabEggs.includes(53) || tabEggs.includes(79)) {
-    return <img src={EggEgg} alt="" />;
+    return (
+      <div className="egg">
+        <img className="eggResultCustom eggimg" src={EggEgg} alt="" />;
+      </div>
+    );
   }
   if (tabEggs.includes(38) || tabEggs.includes(76)) {
-    return <img src={EggPoule} alt="" />;
+    return (
+      <div className="egg">
+        <img className="eggResult eggimg" src={EggPoussin} alt="" />;
+      </div>
+    );
   }
   return <div>{recette.map(egg => egg)}</div>;
-}
+};
 
 export default Recettes;
