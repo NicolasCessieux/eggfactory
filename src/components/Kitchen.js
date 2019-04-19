@@ -61,6 +61,7 @@ class Kitchen extends Component {
 
       <div className="App">
         <div className="PlanDeTravail">
+        
           <img src={this.state.eggFlat} className="ResponsiveImgEggFlat" alt="" />
           <img src={PlanDeTravail} className="ResponsiveImg" alt="" />
           <button
