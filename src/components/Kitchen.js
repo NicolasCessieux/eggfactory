@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import PlanDeTravail from '../images/PlanDeTravail.png';
+import o1 from '../images/oeufs/1.png';
 
 class Kitchen extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       recetteUser: "", 
-      eggs: [] 
+      eggs: [],
+      tabTest: [],
+      eggFlat:''
     };
   }
 
@@ -29,9 +32,17 @@ class Kitchen extends Component {
 
   render() {
     const { eggs } = this.state;
+
+    const handleClick  = ($loki) => {
+      this.state.tabTest.push($loki)
+      this.setState({eggFlat: o1})
+    }
+console.log(this.state.tabTest);
+
     return (
         <div className="App">
             <div className="PlanDeTravail">
+                <img src={this.state.eggFlat} className="ResponsiveImgEggFlat" alt="" />
                 <img src={PlanDeTravail} className="ResponsiveImg" alt="" />
                 <button type="button" className="Button"> Cook ! </button>
             </div>
@@ -51,9 +62,9 @@ class Kitchen extends Component {
                   item.$loki === 76 || 
                   item.$loki === 79 ||
                   item.$loki === 80).map((egg, index) => 
-                  <div className="EtagerePlacard">
+                  <button className="EtagerePlacard" onClick={() => handleClick(egg.$loki) } >
                     <img className="Oeuf"  key={index} src={egg.image} alt="" />
-                  </div>
+                  </button>
                   )
                 }
             </div>
