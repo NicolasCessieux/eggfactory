@@ -13,14 +13,32 @@
   padding: 24px;
 }
 
-.Placard {
-  width: 33vw;
-  min-height: 100vh;
-}
-
 .ResponsiveImg {
   max-width: 100%;
   max-height: 66vh;
+}
+
+.Placard {
+  width: 33vw;
+  height: 95vh;
+  overflow: scroll;
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #644832;
+}
+
+.EtagerePlacard {
+
+  background-image: url("images/Placard.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Oeuf {
+  width: 33vw;
+  height: 33vw;
 }
 
 .Button {
