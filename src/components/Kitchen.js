@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import PlanDeTravail from '../images/PlanDeTravail.png';
-import o1 from '../images/oeufs/1.png';
+import PlanDeTravail from "../images/PlanDeTravail.png";
+import o1 from "../images/oeufs/1.png";
 import Modal from "react-awesome-modal";
-import RandomEgg from "./RandomEgg"
+import RandomEgg from "./RandomEgg";
+import ModalEasterEgg from "./ModalEasterEgg";
 
 class Kitchen extends Component {
   constructor(props) {
@@ -11,8 +12,9 @@ class Kitchen extends Component {
       recetteUser: "",
       eggs: [],
       tabTest: [],
-      eggFlat: '',
-      visible: false
+      eggFlat: "",
+      visible: false,
+      modalEasterEgg: false
     };
   }
 
@@ -42,30 +44,36 @@ class Kitchen extends Component {
   closeModal() {
     this.setState({
       visible: false,
-      eggFlat:""
+      eggFlat: ""
     });
   }
 
   componentDidUpdate() {
-    document.getElementsByClassName("modal")[0].parentElement.style.backgroundColor = "transparent";
-    document.getElementsByClassName("modal")[0].parentElement.style.boxShadow = "none";
+    document.getElementsByClassName(
+      "modal"
+    )[0].parentElement.style.backgroundColor = "transparent";
+    document.getElementsByClassName("modal")[0].parentElement.style.boxShadow =
+      "none";
   }
 
   render() {
     const { eggs } = this.state;
 
-    const handleClick = ($loki) => {
-      this.state.tabTest = [($loki)]
-      this.setState({ eggFlat: o1 })
-    }
+    const handleClick = $loki => {
+      this.state.tabTest = [$loki];
+      this.setState({ eggFlat: o1 });
+    };
     console.log(this.state.tabTest);
 
     return (
-
-
       <div className="App">
         <div className="PlanDeTravail">
-          <img src={this.state.eggFlat} className="ResponsiveImgEggFlat" alt="" />
+        <ModalEasterEgg />
+          <img
+            src={this.state.eggFlat}
+            className="ResponsiveImgEggFlat"
+            alt=""
+          />
           <img src={PlanDeTravail} className="ResponsiveImg" alt="" />
           <button
             type="button"
@@ -78,27 +86,32 @@ class Kitchen extends Component {
         </div>
 
         <div className="Placard">
-          {eggs.filter((item) =>
-            item.$loki === 1 ||
-            item.$loki === 4 ||
-            item.$loki === 16 ||
-            item.$loki === 23 ||
-            item.$loki === 32 ||
-            item.$loki === 38 ||
-            item.$loki === 53 ||
-            item.$loki === 54 ||
-            item.$loki === 58 ||
-            item.$loki === 66 ||
-            item.$loki === 76 ||
-            item.$loki === 79 ||
-            item.$loki === 80).map((egg, index) =>
-              <button className="EtagerePlacard" onClick={() => handleClick(egg.$loki)} >
+          {eggs
+            .filter(
+              item =>
+                item.$loki === 1 ||
+                item.$loki === 4 ||
+                item.$loki === 16 ||
+                item.$loki === 23 ||
+                item.$loki === 32 ||
+                item.$loki === 38 ||
+                item.$loki === 53 ||
+                item.$loki === 54 ||
+                item.$loki === 58 ||
+                item.$loki === 66 ||
+                item.$loki === 76 ||
+                item.$loki === 79 ||
+                item.$loki === 80
+            )
+            .map((egg, index) => (
+              <button
+                className="EtagerePlacard"
+                onClick={() => handleClick(egg.$loki)}
+              >
                 <img className="Oeuf" key={index} src={egg.image} alt="" />
               </button>
-            )
-          }
+            ))}
         </div>
-
 
         <section>
           <Modal
@@ -106,7 +119,6 @@ class Kitchen extends Component {
             width="600"
             height="500"
             effect="fadeInLeft"
-            style={{ backgroundColor: "transparent" }}
             onClickAway={() => this.closeModal()}
           >
             <div className="modal">
